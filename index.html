@@ -26,35 +26,40 @@
 			left: 50%;
 			margin-top: -122px;
 			margin-left: -127px;
+	    }
+		.horseamimal{
+			transform: rotate(0deg);
+			-webkit-transform: rotate(0deg); 
+			transform-origin:bottom center;
+			-webkit-transform-origin: bottom center;
+			-webkit-animation:swinging 5s ease-in-out 0s infinite;
+	        -moz-animation:swinging 5s ease-in-out 0s infinite;
+	        animation:swinging 5s ease-in-out 0s infinite;
+	    }
+	    @-webkit-keyframes swinging{
+			0% { -webkit-transform: rotate(0); }
+			5% { -webkit-transform: rotate(30deg); }
+			10% { -webkit-transform: rotate(-27deg); }
+		    15% { -webkit-transform: rotate(24deg); }
+		    20% { -webkit-transform: rotate(-21deg); }
+		    25% { -webkit-transform: rotate(18deg); }
+		    30% { -webkit-transform: rotate(-15deg); }
+		    35% { -webkit-transform: rotate(12deg); }
+		    40% { -webkit-transform: rotate(-9deg); }
+		    45% { -webkit-transform: rotate(6deg); }
+		    50% { -webkit-transform: rotate(0); }
+		    100% { -webkit-transform: rotate(0); }
 		}
-		.horseamimal{transform: rotate(0deg);-webkit-transform: rotate(0deg); transform-origin:bottom center;
-    -webkit-transform-origin: bottom center;-webkit-animation:swinging 5s ease-in-out 0s infinite;
-    -moz-animation:swinging 5s ease-in-out 0s infinite;
-    animation:swinging 5s ease-in-out 0s infinite;}
-	@-webkit-keyframes swinging{
-		0% { -webkit-transform: rotate(0); }
-		5% { -webkit-transform: rotate(30deg); }
-		10% { -webkit-transform: rotate(-27deg); }
-	    15% { -webkit-transform: rotate(24deg); }
-	    20% { -webkit-transform: rotate(-21deg); }
-	    25% { -webkit-transform: rotate(18deg); }
-	    30% { -webkit-transform: rotate(-15deg); }
-	    35% { -webkit-transform: rotate(12deg); }
-	    40% { -webkit-transform: rotate(-9deg); }
-	    45% { -webkit-transform: rotate(6deg); }
-	    50% { -webkit-transform: rotate(0); }
-	    100% { -webkit-transform: rotate(0); }
-	}
 	</style>
 </head>
 <body>
 	<div class="views">
-		<img src="images/shakehande.png">
+		<img id="shakehand" src="images/shakehande.png">
 	</div>
 </body>
 </html>
 <script>
-	var dom = document.getElementByTagName('img')[0];
+	var dom = document.getElementById('shakehand');
 	if (window.DeviceMotionEvent) {
         window.addEventListener('devicemotion', deviceMotionHandler, false);
     } else {
